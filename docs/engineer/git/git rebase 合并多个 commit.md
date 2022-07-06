@@ -11,25 +11,13 @@ commit 3a4226
 
 ## 选择要合并的 commit
 
-这里以合并前三条 `commit` 记录为例，有两种方式
-
-### 选择前三次提交记录
-
-这里也有两种方式
-
-```
-git rebase -i HEAD^^^
-```
+这里以合并前三条 `commit` 记录为例，有三种方式
 
 ```
 git rebase -i HEAD~3
-```
 
-### 指定第四次提交的版本号
+git rebase -i HEAD^^^
 
-该版本不参与合并，可将其当作一个坐标。
-
-```
 git rebase -i 3a4226b
 ```
 
