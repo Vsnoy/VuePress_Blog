@@ -3,14 +3,19 @@ module.exports = {
   head: [["link", { rel: "icon", href: "/header.jpg" }]],
   base: "/VuePress_Blog/",
   plugins: [
+    ["vuepress-plugin-nuggets-style-copy"],
+    ["@vuepress/back-to-top"],
     [
       "vuepress-plugin-auto-sidebar",
       {
-        // options
+        title: {
+          mode: "titlecase",
+          map: {
+            "/engineer/ssh/": "SSH",
+          }
+        }
       },
     ],
-    ["vuepress-plugin-nuggets-style-copy"],
-    ["@vuepress/back-to-top"],
   ],
   markdown: { lineNumbers: true },
   themeConfig: {
@@ -22,7 +27,16 @@ module.exports = {
       },
       {
         text: "工程化",
-        link: "/engineer/git/git commit 提交规范",
+        items: [
+          {
+            text: "Git",
+            link: "/engineer/git/git commit 提交规范"
+          },
+          {
+            text: "SSH",
+            link: "/engineer/ssh/ssh 连接 github"
+          }
+        ]
       },
     ],
     sidebar: "auto",

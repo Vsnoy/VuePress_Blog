@@ -5,6 +5,7 @@
   "repository": "git@github.com:Vsnoy/VuePress_Blog.git",
   "license": "ISC",
   "scripts": {
+    "nav": "vuepress nav docs",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
