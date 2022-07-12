@@ -2,4 +2,4 @@
 autoSort: -2
 ---
 
-# JavaScript
+# JS
