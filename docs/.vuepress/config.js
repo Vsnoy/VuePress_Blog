@@ -11,8 +11,9 @@ module.exports = {
         title: {
           mode: "titlecase",
           map: {
-            "/engineer/ssh/": "SSH",
+            "/fe-piece/": "Piece",
             "/fe-basic/js/": "JS",
+            "/engineer/ssh/": "SSH",
             "/question/js/": "JS",
           }
         }
