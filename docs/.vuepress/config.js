@@ -26,6 +26,15 @@ module.exports = {
     lastUpdated: "Last Updated",
     nav: [
       {
+        text: "前端碎片",
+        items: [
+          {
+            text: "JS",
+            link: "/fe-piece/js"
+          }
+        ]
+      },
+      {
         text: "前端基础",
         items: [
           {

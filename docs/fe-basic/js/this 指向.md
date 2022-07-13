@@ -69,7 +69,7 @@ obj.foo() // 2 不是 1
 
 ```
 function foo() {
-  console.log( this.a )
+  console.log(this.a)
 }
 
 var obj = {
@@ -84,7 +84,7 @@ obj.foo() // 2
 
 ```
 function foo() {
-  console.log( this.a )
+  console.log(this.a)
 }
 
 var obj1 = {
@@ -104,7 +104,7 @@ obj2.obj1.foo() // 1
 
 #### this 丢失
 
-需要注意的是，隐式绑定下， `this` 容易丢失绑定的对象，常见的两种情况是**引用赋值**和**回调函数**。
+需要注意的是，隐式绑定下， `this` 容易丢失绑定的对象，常见的两种情况是 **引用赋值** 和 **回调函数**。
 
 ##### 引用赋值
 
@@ -112,7 +112,7 @@ obj2.obj1.foo() // 1
 var a = 1
 
 function foo() {
-  console.log( this.a )
+  console.log(this.a)
 }
 
 var obj = {
@@ -138,7 +138,7 @@ obj.foo() // 2
 var a = 1 
 
 function foo() {
-  console.log( this.a )
+  console.log(this.a)
 }
 
 function doFoo(fn) { // 相当于 fn = foo，fn 相当于 foo 别名
@@ -169,7 +169,7 @@ doFoo( obj.foo ) // 1
 
 ```
 function foo(b) {
-  console.log( this.a + b)
+  console.log(this.a + b)
 }
 
 var obj = {
