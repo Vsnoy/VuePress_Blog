@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>闭包 | Trauma</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/VuePress_Blog/header.jpg">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/VuePress_Blog/assets/css/0.styles.cd113ce0.css" as="style"><link rel="preload" href="/VuePress_Blog/assets/js/app.3030be84.js" as="script"><link rel="preload" href="/VuePress_Blog/assets/js/2.26990db4.js" as="script"><link rel="preload" href="/VuePress_Blog/assets/js/19.3dc5b868.js" as="script"><link rel="prefetch" href="/VuePress_Blog/assets/js/10.9a2795d5.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/11.23db029f.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/12.505fbcc2.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/13.93d64b8d.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/14.75b560fb.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/15.13bd5d84.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/16.5c4a5034.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/17.1827a5aa.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/18.3df5a64b.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/20.7b8708a5.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/21.4f97d2a1.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/22.8d24c876.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/23.8f3cdf20.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/24.769c96c0.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/3.eaafeaf2.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/4.17485205.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/5.e2ed9427.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/6.8e25cc37.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/7.5ebe7a67.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/8.420e39c2.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/9.101e2734.js">
+    <link rel="stylesheet" href="/VuePress_Blog/assets/css/0.styles.cd113ce0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/VuePress_Blog/" class="home-link router-link-active"><!----> <span class="site-name">Trauma</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端碎片" class="dropdown-title"><span class="title">前端碎片</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端碎片" class="mobile-dropdown-title"><span class="title">前端碎片</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-piece/js.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-basic/js/this 指向.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/git/git commit 提交规范.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/ssh/ssh 连接 github.html" class="nav-link">
+  SSH
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="面试" class="mobile-dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/interview/question/html.html" class="nav-link">
+  面经
+</a></li><li class="dropdown-item"><!----> <a href="/VuePress_Blog/interview/puzzler/js.html" class="nav-link">
+  题库
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端碎片" class="dropdown-title"><span class="title">前端碎片</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端碎片" class="mobile-dropdown-title"><span class="title">前端碎片</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-piece/js.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-basic/js/this 指向.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/git/git commit 提交规范.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/ssh/ssh 连接 github.html" class="nav-link">
+  SSH
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="面试" class="mobile-dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/interview/question/html.html" class="nav-link">
+  面经
+</a></li><li class="dropdown-item"><!----> <a href="/VuePress_Blog/interview/puzzler/js.html" class="nav-link">
+  题库
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/VuePress_Blog/fe-basic/js/this 指向.html" class="sidebar-link">this 指向</a></li><li><a href="/VuePress_Blog/fe-basic/js/变量、函数提升.html" class="sidebar-link">变量、函数提升</a></li><li><a href="/VuePress_Blog/fe-basic/js/词法作用域.html" class="sidebar-link">词法作用域</a></li><li><a href="/VuePress_Blog/fe-basic/js/闭包.html" class="active sidebar-link">闭包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/VuePress_Blog/fe-basic/js/闭包.html#定义" class="sidebar-link">定义</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/fe-basic/js/闭包.html#作用" class="sidebar-link">作用</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/fe-basic/js/闭包.html#显式触发条件" class="sidebar-link">显式触发条件</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/fe-basic/js/闭包.html#垃圾收集机制" class="sidebar-link">垃圾收集机制</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/fe-basic/js/闭包.html#表现形式" class="sidebar-link">表现形式</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/fe-basic/js/闭包.html#参考" class="sidebar-link">参考</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h1> <h2 id="定义"><a href="#定义" class="header-anchor">#</a> 定义</h2> <div class="custom-block tip"><p class="custom-block-title">定义</p> <p>闭包就是函数在执行时对其定义时的词法作用域的引用。</p></div> <p><strong>作用域链</strong> 和 <strong>垃圾回收机制</strong> 二者相结合产生了闭包这个概念，使得函数 <strong>无论在何处执行</strong> 都可以访问 <strong>其定义处的词法作用域内的变量</strong>。</p> <h2 id="作用"><a href="#作用" class="header-anchor">#</a> 作用</h2> <ul><li>在函数外部能够访问到函数内部的变量</li> <li>延长变量的生命周期</li></ul> <h2 id="显式触发条件"><a href="#显式触发条件" class="header-anchor">#</a> 显式触发条件</h2> <p>为啥要说显式的触发，因为一般的隐式闭包看起来好像没啥用，也就很容易被忽略：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function foo() {
+  let a = 123
+  
+  function bar() { // 实际上 bar 函数此时已经具备闭包
+      console.log(a)
+  }
+  
+  bar() // 但 bar 函数执行的地方却位于定义时的词法作用域内，闭包与当前词法作用域实际上是一致的
+}
+
+foo()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>上述例子由于 <code>bar</code> 函数在执行的时候位于 <code>foo</code> 函数之内，也就是其定义时的词法作用域之内。
+闭包的范围就刚好与当前词法作用域是一致的，所以此时闭包的作用可以忽略不计。</p> <p>因此，要想发挥闭包的作用需要两个条件：</p> <ul><li>该函数要在 <strong>其定义时的词法作用域之外</strong> 执行</li> <li>该函数作用域内使用了其定义时的词法作用域的其他变量（<strong>自身作用域外的变量</strong>）</li></ul> <h2 id="垃圾收集机制"><a href="#垃圾收集机制" class="header-anchor">#</a> 垃圾收集机制</h2> <p><code>js</code> 中最常用的垃圾收集方法就是 <strong>标记清除</strong> ：</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>垃圾收集器在运行的时候会给存储在内存中的所有变量都加上标记（当然，可以使用任何标记方式）。然后，它会去掉环境中的变量以及被环境中的变量引用的变量的标记。而在此之后再被加上标记的变量将被视为准备删除的变量，原因是环境中的变量已经无法访问到这些变量了。最后，垃圾收集器完成内存清除工作，销毁那些带标记的值并回收它们所占用的内存空间。
+——《JavaScript 高级程序设计》</p></div> <p>也就是说，一个变量在 <strong>离开其声明的作用域时且没有被引用时</strong> 会被垃圾收集器标记，然后被回收清除内存无法被访问。
+然而，由于闭包引用了其定义时的词法作用域，所以即便 <strong>在离开作用域后该词法作用域内的变量仍然属于被引用的状态</strong> ，
+因此这些变量都 <strong>没有被回收</strong> ，也就能够通过闭包进行访问！</p> <h2 id="表现形式"><a href="#表现形式" class="header-anchor">#</a> 表现形式</h2> <p>明白了本质之后，我们就来看看，在真实的场景中，究竟在哪些地方能体现闭包的存在？</p> <h3 id="返回函数"><a href="#返回函数" class="header-anchor">#</a> 返回函数</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>function f1() {
+  var a = 2
+  function f2() {
+    console.log(a)  // 2
+  }
+  return f2
+}
+
+var x = f1()
+x() 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="函数参数"><a href="#函数参数" class="header-anchor">#</a> 函数参数</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>var a = 1
+
+function foo(){
+  var a = 2
+  function baz() {
+    console.log(a)  // 2
+  }
+  bar(baz)
+}
+
+function bar(fn) {
+  fn()
+}
+
+foo()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="回调函数"><a href="#回调函数" class="header-anchor">#</a> 回调函数</h3> <p><strong>该类实质上是函数参数一类下的一些特殊场景集合</strong>。
+在定时器、事件监听、跨窗口通信、Ajax 请求、Web Workers 或者任何异步中，只要使用了回调函数，实际上就是在使用闭包。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 定时器
+setTimeout(function timeHandler() {
+  console.log('111')
+}, 100)
+
+// 事件监听
+$('#app').click(function() {
+  console.log('DOM Listener')
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="立即执行函数表达式"><a href="#立即执行函数表达式" class="header-anchor">#</a> 立即执行函数表达式</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>var a = 2
+
+(function fun() {
+  console.log(a)  // 2
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://sanyuan0704.top/blogs/javascript/js-base/004.html" target="_blank" rel="noopener noreferrer">谈谈你对闭包的理解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://note.xiexuefeng.cc/post/js-closure-again/" target="_blank" rel="noopener noreferrer">再论闭包<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">7/13/2022, 9:05:10 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/VuePress_Blog/fe-basic/js/词法作用域.html" class="prev">
+        词法作用域
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/VuePress_Blog/assets/js/app.3030be84.js" defer></script><script src="/VuePress_Blog/assets/js/2.26990db4.js" defer></script><script src="/VuePress_Blog/assets/js/19.3dc5b868.js" defer></script>
+  </body>
+</html>
