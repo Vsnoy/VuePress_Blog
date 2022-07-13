@@ -13,6 +13,7 @@ module.exports = {
           map: {
             "/engineer/ssh/": "SSH",
             "/fe-basic/js/": "JS",
+            "/question/js/": "JS",
           }
         }
       },
@@ -57,17 +58,17 @@ module.exports = {
         ]
       },
       {
-        text: "面试",
+        text: "题库",
         items: [
           {
-            text: "面经",
-            link: "/interview/question/html",
-          },
-          {
-            text: "题库",
-            link: "/interview/puzzler/js"
+            text: "JS",
+            link: "/question/js/this 指向",
           }
-        ],
+        ]
+      },
+      {
+        text: "面试",
+        link: "/interview/html",
       },
     ],
     sidebar: "auto",
