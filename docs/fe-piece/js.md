@@ -40,11 +40,9 @@ async function async1() {
 }
 ```
 
-参考：
-
-- [从一道题浅说 JavaScript 的事件循环](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
-
 :::warning
 Promise.resolve(v) 与 new Promise(r => r(v)) 不完全等价。  
 待后续研究。
 :::
+
+[从一道题浅说 JavaScript 的事件循环](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
