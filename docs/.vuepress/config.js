@@ -18,7 +18,10 @@ module.exports = {
       },
     ],
   ],
-  markdown: { lineNumbers: true },
+  markdown: { 
+    lineNumbers: true,
+    // extractHeaders: [ 'h2', 'h3', 'h4', 'h5' ]
+  },
   themeConfig: {
     lastUpdated: "Last Updated",
     nav: [
@@ -27,7 +30,7 @@ module.exports = {
         items: [
           {
             text: "JS",
-            link: "/fe-basic/js/var、let 及 const 区别"
+            link: "/fe-basic/js/this 指向"
           }
         ]
       },
