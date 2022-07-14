@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>事件循环 | Trauma</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/VuePress_Blog/header.jpg">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/VuePress_Blog/assets/css/0.styles.cd113ce0.css" as="style"><link rel="preload" href="/VuePress_Blog/assets/js/app.e7604f0e.js" as="script"><link rel="preload" href="/VuePress_Blog/assets/js/2.26990db4.js" as="script"><link rel="preload" href="/VuePress_Blog/assets/js/26.b82d9ada.js" as="script"><link rel="preload" href="/VuePress_Blog/assets/js/3.9f21d9b7.js" as="script"><link rel="prefetch" href="/VuePress_Blog/assets/js/10.9a2795d5.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/11.23db029f.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/12.505fbcc2.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/13.93d64b8d.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/14.75b560fb.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/15.13bd5d84.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/16.5c4a5034.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/17.62e4dc8c.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/18.f1d1c1fa.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/19.ea961677.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/20.735e51ea.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/21.1464ba29.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/22.ae6b3a20.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/23.3d9e01ea.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/24.769c96c0.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/25.9e58d567.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/27.f046e03c.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/28.16943afe.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/29.e8265496.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/4.17485205.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/5.e2ed9427.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/6.8e25cc37.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/7.5ebe7a67.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/8.420e39c2.js"><link rel="prefetch" href="/VuePress_Blog/assets/js/9.101e2734.js">
+    <link rel="stylesheet" href="/VuePress_Blog/assets/css/0.styles.cd113ce0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/VuePress_Blog/" class="home-link router-link-active"><!----> <span class="site-name">Trauma</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端碎片" class="dropdown-title"><span class="title">前端碎片</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端碎片" class="mobile-dropdown-title"><span class="title">前端碎片</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-piece/js.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-basic/js/this 指向.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/git/git commit 提交规范.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/ssh/ssh 连接 github.html" class="nav-link">
+  SSH
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="题库" class="dropdown-title"><span class="title">题库</span> <span class="arrow down"></span></button> <button type="button" aria-label="题库" class="mobile-dropdown-title"><span class="title">题库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/question/js/this 指向.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><a href="/VuePress_Blog/interview/html.html" class="nav-link">
+  面试
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端碎片" class="dropdown-title"><span class="title">前端碎片</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端碎片" class="mobile-dropdown-title"><span class="title">前端碎片</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-piece/js.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/fe-basic/js/this 指向.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/git/git commit 提交规范.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/VuePress_Blog/engineer/ssh/ssh 连接 github.html" class="nav-link">
+  SSH
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="题库" class="dropdown-title"><span class="title">题库</span> <span class="arrow down"></span></button> <button type="button" aria-label="题库" class="mobile-dropdown-title"><span class="title">题库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/VuePress_Blog/question/js/this 指向.html" class="nav-link">
+  JS
+</a></li></ul></div></div><div class="nav-item"><a href="/VuePress_Blog/interview/html.html" class="nav-link">
+  面试
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/VuePress_Blog/question/js/this 指向.html" class="sidebar-link">this 指向</a></li><li><a href="/VuePress_Blog/question/js/事件循环.html" class="active sidebar-link">事件循环</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/VuePress_Blog/question/js/事件循环.html#习题-1" class="sidebar-link">习题 1</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/question/js/事件循环.html#习题-2" class="sidebar-link">习题 2</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/question/js/事件循环.html#习题-3" class="sidebar-link">习题 3</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/question/js/事件循环.html#习题-4" class="sidebar-link">习题 4</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/question/js/事件循环.html#习题组-1" class="sidebar-link">习题组 1</a></li><li class="sidebar-sub-header"><a href="/VuePress_Blog/question/js/事件循环.html#习题组-2" class="sidebar-link">习题组 2</a></li></ul></li><li><a href="/VuePress_Blog/question/js/变量提升.html" class="sidebar-link">变量提升</a></li><li><a href="/VuePress_Blog/question/js/循环绑定.html" class="sidebar-link">循环绑定</a></li><li><a href="/VuePress_Blog/question/js/闭包.html" class="sidebar-link">闭包</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="事件循环"><a href="#事件循环" class="header-anchor">#</a> 事件循环</h1> <div class="custom-block tip"><p class="custom-block-title">要点</p> <ul><li><p>异步任务先注册再执行。尤须注意 <code>Promise</code> 多个 <code>then</code> 时微任务的注册顺序</p></li> <li><p><code>then</code> 微任务注册时机。碰到 <code>then</code> 时再注册，而非一看到 <code>resolve</code> 就立即注册，<code>resolve</code> 仅是确保该 <code>then</code> 微任务能够被注册</p></li> <li><p>遇到 <code>await</code>，会立即执行右边的语句，然后提前跳出 <code>async</code> 函数，待外部执行完毕后，再返回 <code>async</code> 函数内部继续执行未执行完的</p></li></ul></div> <h2 id="习题-1"><a href="#习题-1" class="header-anchor">#</a> 习题 1</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log('start')
+
+setTimeout(() =&gt; {
+  console.log('children2')
+  Promise.resolve().then(() =&gt; {
+    console.log('children3')
+  })
+}, 0)
+
+new Promise(function(resolve, reject) {
+  console.log('children4')
+  setTimeout(function() {
+    console.log('children5')
+    resolve('children6')
+  }, 0)
+}).then(res =&gt;{         
+  console.log('children7')
+  setTimeout(() =&gt; {
+    console.log(res)
+  }, 0)
+})
+
+// 输出
+start
+children4
+children2
+children3 
+children5
+children7 
+children6
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h2 id="习题-2"><a href="#习题-2" class="header-anchor">#</a> 习题 2 <span class="badge tip" style="vertical-align:top;" data-v-15b7b770>hard</span></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>setTimeout(() =&gt; { // 宏 1
+  console.log(0)
+})
+
+new Promise(resolve =&gt; {
+  resolve()
+  Promise.resolve().then(() =&gt; { // 微 1
+    console.log(2)
+    Promise.resolve().then(() =&gt; { // 微 3
+      console.log(4)
+    })
+ })
+ console.log(3)
+}).then(() =&gt; { // 微 2
+  console.log(1)
+})
+
+console.log(5)
+
+// 输出
+3、5、2、1、4、0
+
+// 解析
+script 整体作为一个宏任务开始执行
+碰到 setTimeout，注册宏 1
+碰到第一个 then，注册微 1
+继续执行同步代码，输出 3
+碰到第二个 then，注册微 2
+继续执行同步代码，输出 5
+script 整体宏任务执行完毕，检查微任务队列不为空，准备逐一执行
+取出微 1，输出 2
+碰到第三个 then，注册微 3
+取出微 2，输出 1
+取出微 3，输出 4
+当前微任务队列所有微任务执行完毕，准备执行下一个宏任务
+取出宏 1，输出 0
+宏 1 执行完毕，检查微任务队列为空，则准备执行下一个宏任务，检查宏任务队列也为空，则事件循环结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h2 id="习题-3"><a href="#习题-3" class="header-anchor">#</a> 习题 3</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log(1) 
+
+setTimeout(() =&gt; { // 宏 1
+  console.log(2)     
+  Promise.resolve().then(() =&gt; { 微 4
+    console.log(3)  
+  })
+})
+
+new Promise((resolve, reject) =&gt; {
+  console.log(4) 
+  resolve(5)
+}).then((data) =&gt; { // 微 1
+  console.log(data)  
+  Promise.resolve().then(() =&gt; { // 微 2
+    console.log(6)  
+  }).then(() =&gt; { // 微 3
+    console.log(7)  
+    setTimeout(() =&gt; { // 宏 3
+      console.log(8)  
+    }, 0)
+  })
+})
+
+setTimeout(() =&gt; { // 宏 2
+  console.log(9)     
+})
+
+console.log(10)
+
+// 输出
+1、4、10、5、6、7、2、3、9、8
+
+// 解析
+script 整体作为一个宏任务开始执行
+执行同步代码，输出 1
+碰到第一个 setTimeout，注册宏 1
+继续执行同步代码，输出 4
+碰到第一个 then，注册微 1
+碰到第二个 setTimeout，注册宏 2
+继续执行同步代码，输出 10
+script 整体宏任务执行完毕，检查微任务队列不为空，准备逐一执行
+取出微 1，输出 5
+碰到第二个 then，注册微 2
+取出微 2，输出 6
+碰到第三个 then，注册微 3
+取出微 3，输出 7
+碰到第三个宏任务，注册宏 3
+当前微任务队列所有微任务执行完毕，准备执行下一个宏任务
+取出宏 1，输出 2
+碰到第四个微任务，注册微 4
+宏 1 执行完毕，检查微任务队列不为空，准备逐一执行
+取出微 4，输出 3
+当前微任务队列所有微任务执行完毕，准备执行下一个宏任务
+取出宏 2，输出 9
+宏 2 执行完毕，检查微任务队列为空，则准备执行下一个宏任务，检查宏任务队列不为空
+取出宏 3，输出 8
+宏 3 执行完毕，检查微任务队列为空，则准备执行下一个宏任务，检查宏任务队列也为空，则事件循环结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><h2 id="习题-4"><a href="#习题-4" class="header-anchor">#</a> 习题 4 <span class="badge tip" style="vertical-align:top;" data-v-15b7b770>hard</span></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>var myPromise = Promise.resolve(Promise.resolve('Promise'))
+
+function funcOne() {
+  console.log('funcOne Start')
+  myPromise.then(res =&gt; res).then(res =&gt; console.log('funcOne ' + res))
+  setTimeout(() =&gt; console.log('funcOne Timeout'), 0)
+  console.log('funcOne End')
+}
+
+async function funcTwo() {
+  console.log('funcTwo Start')
+  const res = await myPromise
+  console.log(await 'funcTwo ' + res)
+  setTimeout(() =&gt; console.log('funcTwo Timeout'), 0)
+  console.log('funcTwo End')
+}
+
+funcOne()
+funcTwo()
+
+// 输出
+funcOne Start
+funcOne End
+funcTwo Start
+funcOne Promise
+funcTwo Promise
+funcTwo End
+funcOne Timeout
+funcTwo Timeout
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="习题组-1"><a href="#习题组-1" class="header-anchor">#</a> 习题组 1</h2> <h3 id="习题一"><a href="#习题一" class="header-anchor">#</a> 习题一</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log('外部 promise')
+  resolve()
+}).then(() =&gt; {
+  console.log('外部第一个 then')
+  return new Promise((resolve, reject) =&gt; {
+    console.log('内部 promise')
+    resolve()
+  }).then(() =&gt; {
+    console.log('内部第一个 then')
+  }).then(() =&gt; {
+    console.log('内部第二个 then')
+  })
+}).then(() =&gt; {
+  console.log('外部第二个 then')
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部第一个 then
+内部第二个 then
+外部第二个 then
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="习题二"><a href="#习题二" class="header-anchor">#</a> 习题二</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log('外部 promise')
+  resolve()
+}).then(() =&gt; {
+  console.log('外部第一个 then')
+  new Promise((resolve, reject) =&gt; {
+    console.log('内部 promise')
+    resolve()
+  }).then(() =&gt; {
+    console.log('内部第一个 then')
+  }).then(() =&gt; {
+    console.log('内部第二个 then')
+  })
+}).then(() =&gt; {
+  console.log('外部第二个 then')
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部第一个 then
+外部第二个 then
+内部第二个 then
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="习题三"><a href="#习题三" class="header-anchor">#</a> 习题三</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log('外部 promise')
+  resolve()
+}).then(() =&gt; {
+  console.log('外部第一个 then')
+  let p = new Promise((resolve, reject) =&gt; {
+    console.log('内部 promise')
+    resolve()
+  })
+  p.then(() =&gt; {
+    console.log('内部第一个 then')
+  })
+  p.then(() =&gt; {
+    console.log('内部第二个 then')
+  })
+}).then(() =&gt; {
+  console.log('外部第二个 then')
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部第一个 then
+内部第二个 then
+外部第二个 then
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h3 id="习题四"><a href="#习题四" class="header-anchor">#</a> 习题四 <span class="badge tip" style="vertical-align:top;" data-v-15b7b770>hard</span></h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>let p = new Promise((resolve, reject) =&gt; {
+  console.log('外部 promise')
+  resolve()
+})
+p.then(() =&gt; {
+  console.log('外部第一个 then')
+  new Promise((resolve, reject) =&gt; {
+    console.log('内部 promise')
+    resolve()
+  }).then(() =&gt; {
+    console.log('内部第一个 then')
+  }).then(() =&gt; {
+    console.log('内部第二个 then')
+  })
+})
+p.then(() =&gt; {
+  console.log('外部第二个 then')
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+外部第二个 then
+内部第一个 then
+内部第二个 then
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h3 id="习题五"><a href="#习题五" class="header-anchor">#</a> 习题五 <span class="badge tip" style="vertical-align:top;" data-v-15b7b770>hard</span></h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log('外部 promise')
+  resolve()
+}).then(() =&gt; {
+  console.log('外部第一个 then')
+  new Promise((resolve, reject) =&gt; {
+    console.log('内部 promise')
+    resolve()
+  }).then(() =&gt; {
+    console.log('内部第一个 then')
+  }).then(() =&gt; {
+    console.log('内部第二个 then')
+  })
+  return new Promise((resolve, reject) =&gt; {
+    console.log('内部 promise2')
+    resolve()
+  }).then(() =&gt; {
+    console.log('内部第一个 then2')
+  }).then(() =&gt; {
+    console.log('内部第二个 then2')
+  })
+}).then(() =&gt; {
+  console.log('外部第二个 then')
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部 promise2
+内部第一个 then
+内部第一个 then2
+内部第二个 then
+内部第二个 then2
+外部第二个 then
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h2 id="习题组-2"><a href="#习题组-2" class="header-anchor">#</a> 习题组 2</h2> <h3 id="习题一-2"><a href="#习题一-2" class="header-anchor">#</a> 习题一</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function async1() {
+  console.log('async1 start')
+  await async2()
+  console.log('async1 end')
+}
+
+async function async2() {
+  console.log('async2')
+}
+
+console.log('script start')
+
+setTimeout(function () {
+  console.log('setTimeout')
+}, 0)
+
+async1()
+
+new Promise((resolve) =&gt; {
+  console.log('promise1')
+  resolve()
+}).then(function () {
+  console.log('promise2')
+})
+
+console.log('script end')
+
+// 输出
+script start
+async1 start
+async2
+promise1
+script end
+async1 end
+promise2
+setTimeout
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h3 id="习题二-2"><a href="#习题二-2" class="header-anchor">#</a> 习题二</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function async1() {
+  console.log('async1 start')
+  await async2()
+  console.log('async1 end')
+}
+
+async function async2() {
+  new Promise(function (resolve) {
+    console.log('promise1')
+    resolve()
+  }).then(function () {
+    console.log('promise2')
+  })
+}
+
+console.log('script start')
+
+setTimeout(function () {
+  console.log('setTimeout')
+}, 0)
+
+async1()
+
+new Promise(function (resolve) {
+  console.log('promise3')
+  resolve()
+}).then(function () {
+  console.log('promise4')
+})
+
+console.log('script end')
+
+// 输出
+script start
+async1 start 
+promise1
+promise3 
+script end 
+promise2
+async1 end
+promise4
+setTimeout
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><h3 id="习题三-2"><a href="#习题三-2" class="header-anchor">#</a> 习题三 <span class="badge tip" style="vertical-align:top;" data-v-15b7b770>hard</span></h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function async1() {
+  console.log('async1 start')
+  await async2()
+  setTimeout(function() {
+    console.log('setTimeout1')  
+  }, 0)
+}
+
+async function async2() {
+  setTimeout(function() {
+    console.log('setTimeout2')
+  }, 0)
+}
+
+console.log('script start')
+
+setTimeout(function() {
+  console.log('setTimeout3')
+}, 0)
+
+async1()
+
+new Promise(function(resolve) {
+  console.log('promise1')
+  resolve()
+}).then(function() {
+  console.log('promise2')
+})
+
+console.log('script end')
+
+// 输出
+script start
+async1 start
+promise1
+script end
+promise2
+setTimeout3
+setTimeout2
+setTimeout1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">7/14/2022, 5:17:48 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/VuePress_Blog/question/js/this 指向.html" class="prev">
+        this 指向
+      </a></span> <span class="next"><a href="/VuePress_Blog/question/js/变量提升.html">
+        变量提升
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/VuePress_Blog/assets/js/app.e7604f0e.js" defer></script><script src="/VuePress_Blog/assets/js/2.26990db4.js" defer></script><script src="/VuePress_Blog/assets/js/26.b82d9ada.js" defer></script><script src="/VuePress_Blog/assets/js/3.9f21d9b7.js" defer></script>
+  </body>
+</html>
