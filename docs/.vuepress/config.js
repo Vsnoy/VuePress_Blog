@@ -29,12 +29,7 @@ module.exports = {
     nav: [
       {
         text: "前端碎片",
-        items: [
-          {
-            text: "JS",
-            link: "/fe-piece/js"
-          }
-        ]
+        link: "/fe-piece/css"
       },
       {
         text: "前端基础",
@@ -70,6 +65,10 @@ module.exports = {
       {
         text: "面试",
         link: "/interview/html",
+      },
+      {
+        text: "资源",
+        link: "/resource/study",
       },
     ],
     sidebar: "auto",

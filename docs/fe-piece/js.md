@@ -4,6 +4,8 @@
 
 ![var_let_const](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/var_let_const.jpg)
 
+[深入理解 let](https://github.com/gengarneko/blog-vuepress/tree/master/docs/frontEnd/es6)
+
 ## async/await 与 Promise
 
 因为 `async/await` 本身就是 `promise` + `generator` 的语法糖。所以 `await` 后面的代码是 `microtask` 。
