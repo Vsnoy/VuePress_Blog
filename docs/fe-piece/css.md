@@ -75,3 +75,28 @@ div .green:nth-of-type(1) {
 
 [nth-of-type 详解](https://juejin.cn/post/6844904174937866247)  
 [:first-of-type 的误用](https://liyucang-git.github.io/2019/07/16/first-of-type%E7%9A%84%E8%AF%AF%E7%94%A8/)
+
+## 文本溢出隐藏
+
+### 单行文本
+
+```
+.textflow {
+  overflow: hidden; 
+  white-space: nowrap; // 文本不换行
+  text-overflow: ellipsis; // 文本超出呈现省略号
+}
+```
+
+### 多行文本
+
+```
+.textflow {
+  overflow: hidden;
+  display: -webkit-box; // 盒模型
+  -webkit-line-clamp: 4; // 控制文本行数
+  -webkit-box-orient: vertical; // 垂直布置子元素
+}
+
+PS: 该方法不兼容 IE
+```

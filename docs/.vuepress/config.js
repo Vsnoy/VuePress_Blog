@@ -12,6 +12,7 @@ module.exports = {
           mode: "titlecase",
           map: {
             "/fe-piece/": "Piece",
+            "/fe-basic/css/": "CSS",
             "/fe-basic/js/": "JS",
             "/engineer/ssh/": "SSH",
             "/question/js/": "JS",
@@ -35,6 +36,10 @@ module.exports = {
         text: "前端基础",
         items: [
           {
+            text: "CSS",
+            link: "/fe-basic/css/盒子模型"
+          },
+          {
             text: "JS",
             link: "/fe-basic/js/this 指向"
           }
@@ -54,17 +59,12 @@ module.exports = {
         ]
       },
       {
-        text: "题库",
-        items: [
-          {
-            text: "JS",
-            link: "/question/js/this 指向",
-          }
-        ]
-      },
-      {
         text: "面试",
         link: "/interview/html",
+      },
+      {
+        text: "题库",
+        link: "/question/this 指向",
       },
       {
         text: "资源",

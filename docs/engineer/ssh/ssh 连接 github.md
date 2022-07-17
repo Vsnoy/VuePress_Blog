@@ -26,6 +26,8 @@ ssh-keygen -t rsa -C "<Your Email>"
 ## 查看 ssh key
 
 ```
+ll -d ~/.ssh
+
 cat ~/.ssh/id_rsa.pub
 ```
 
