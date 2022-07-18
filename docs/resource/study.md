@@ -19,11 +19,16 @@
 
 ## 博客
 
-- [木易杨前端进阶](https://muyiy.cn/)
+- [Angus Yang](https://www.imyangyong.com/blog/categories/)
+- [冴羽](https://github.com/mqyqingfeng/Blog)
+- [木易杨](https://muyiy.cn/)
 
 ## 订阅
 
 - [前端精读周刊](https://github.com/ascoders/weekly)
+- [CSS Tricks](https://css-tricks.com/)
+- [ECMAScript Daily](https://ecmascript-daily.github.io/)
+- [Fresh Frontend Links](https://frontender-ua.medium.com/)
 
 ## 源码
 
