@@ -1,10 +1,76 @@
 # JS
 
+## API 备忘
+
+### parseInt
+
+`parseInt` 解析一个字符串参数，并返回指定基数的十进制整数或 `NaN`。
+
+```
+parseInt(string[, radix])
+```
+
+- `string`： 要被解析的值。若参数不为字符串，则默认会将其转为字符串。字符串开头的空白符将会被忽略。
+- `radix`： 基数。介于 `2-36` 之间的整数。
+
+:::tip
+**注意**： 在 `radix` 为 `0` 或 `undefined`，或没有指定的情况下，`JS` 作如下处理：
+
+- 如果字符串 `string` 以 `0x` 或者 `0X` 开头，则基数是 `16`。
+- 如果字符串 `string` 以 `0` 开头，基数是 `8` 或者 `10`，一般为 `10`，具体视环境而定。
+- 如果字符串 `string` 以其它任何值开头，则基数是 `10`。
+:::
+
+:::tip
+
+返回 `NaN` 的情况
+
+- `radix` 不在 2-36 范围之内
+- `string` 左起第一个数大于进制数 `radix`
+- 第一个非空字符不为数字
+:::
+
+### map
+
+`map` 创建一个新数组，其值由原数组中每个元素执行回调函数的结果组成。
+
+```
+arr.map(function callback(currentValue[,index[, array]]) {
+  // Return element for new_array
+}[, thisArg])
+```
+
+- `callback`：生成新数组元素的回调函数。
+  - `currentValue`：数组中正在处理的当前元素。
+  - `index`：数组中正在处理的当前元素的索引。
+  - `array`: 被调用的数组。
+- `thisArg`: 执行 `callback` 函数时使用的 `this` 值。
+
 ## var、let 及 const 区别
 
 ![var_let_const](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/var_let_const.jpg)
 
 [深入理解 let](https://github.com/gengarneko/blog-vuepress/tree/master/docs/frontEnd/es6)
+
+## event.target 和 event.currentTarget 区别
+
+- event.target：事件触发者
+- event.currentTarget：事件监听者
+
+```
+<div id="outer">
+  <div id="inner">123</div>
+</div>
+
+<script>
+  document.getElementById('outer').onclick = function(e){
+    console.info('e.target', e.target) // <div id="inner">...</div>
+    console.info('e.currentTarget', e.currentTarget) // <div id="outer">...</div>
+  }
+</script>
+```
+
+[event.target 和 event.currentTarget](https://segmentfault.com/a/1190000003021586)
 
 ## async/await 与 Promise
 

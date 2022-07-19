@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     ["vuepress-plugin-nuggets-style-copy"],
     ["@vuepress/back-to-top"],
+    ['cursor-effects'],
     [
       "vuepress-plugin-auto-sidebar",
       {
@@ -30,7 +31,7 @@ module.exports = {
     nav: [
       {
         text: "前端碎片",
-        link: "/fe-piece/css"
+        link: "/fe-piece/js"
       },
       {
         text: "前端基础",

@@ -13,6 +13,7 @@
     "@vuepress/plugin-back-to-top": "^1.9.7",
     "vuepress": "^1.9.7",
     "vuepress-plugin-auto-sidebar": "^2.3.2",
+    "vuepress-plugin-cursor-effects": "^1.1.4",
     "vuepress-plugin-nuggets-style-copy": "^1.0.3"
   }
 }
