@@ -7,6 +7,12 @@ module.exports = {
     ["@vuepress/back-to-top"],
     ['cursor-effects'],
     [
+      "md-enhance",
+      {
+        footnote: true,
+      },
+    ],
+    [
       "vuepress-plugin-auto-sidebar",
       {
         title: {
@@ -24,7 +30,7 @@ module.exports = {
   ],
   markdown: { 
     lineNumbers: true,
-    // extractHeaders: [ 'h2', 'h3', 'h4', 'h5' ]
+    extractHeaders: [ 'h2', 'h3', 'h4' ]
   },
   themeConfig: {
     lastUpdated: "Last Updated",

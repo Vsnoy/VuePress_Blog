@@ -31,5 +31,6 @@ function new(con, ...args) {
 
 ## 参考
 
+- [JavaScript 深入之 new 的模拟实现](https://github.com/mqyqingfeng/Blog/issues/13)
 - [深度解析 new 原理及模拟实现](https://muyiy.cn/blog/3/3.5.html)
 - [new 调用构造器](http://file.jing999.cn/workspace/Js/extends.html)
