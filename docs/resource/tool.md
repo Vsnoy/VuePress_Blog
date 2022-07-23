@@ -24,3 +24,4 @@
 
 - [DeepL](https://www.deepl.com/translator)
 - [SM.MS](https://sm.ms/)
+- [Code996](https://hellodigua.github.io/code996/)

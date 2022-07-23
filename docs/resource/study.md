@@ -27,6 +27,7 @@
 - [余光](https://webbj97.github.io/summary/blog/)
 - [冴羽](https://github.com/mqyqingfeng/Blog)
 - [木易杨](https://muyiy.cn/)
+- [前端日志](https://mengsixing.github.io/)
 
 ## 订阅
 

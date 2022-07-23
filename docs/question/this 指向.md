@@ -1,6 +1,28 @@
 # this 指向
 
-## 习题
+## 习题一
+
+```
+var name = 'violet'
+var object = {
+  name : 'trauma',
+  getName: function() {
+    return this.name
+  }
+}
+
+console.log(object.getName()) 
+console.log((object.getName = object.getName)())
+
+// 输出
+trauma
+violet
+
+// 难点
+赋值语句返回值是等号右边的值
+```
+
+## 习题二
 
 ```
 var tag = 'window'
