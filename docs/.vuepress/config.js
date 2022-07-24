@@ -60,6 +60,10 @@ module.exports = {
             link: "/engineer/git/git commit 提交规范"
           },
           {
+            text: "Node",
+            link: "engineer/node/nrm 切换镜像源"
+          },
+          {
             text: "SSH",
             link: "/engineer/ssh/ssh 连接 github"
           }

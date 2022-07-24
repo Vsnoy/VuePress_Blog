@@ -24,6 +24,7 @@
 - [JavaScript Guidebook](https://tsejx.github.io/javascript-guidebook/)
 - [Angus Yang](https://www.imyangyong.com/blog/categories/)
 - [GuangJu](https://zguangju.github.io/)
+- [Marvin](https://canyuegongzi.github.io/)
 - [余光](https://webbj97.github.io/summary/blog/)
 - [冴羽](https://github.com/mqyqingfeng/Blog)
 - [木易杨](https://muyiy.cn/)
