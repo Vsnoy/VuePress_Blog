@@ -61,7 +61,7 @@ module.exports = {
           },
           {
             text: "Node",
-            link: "engineer/node/nrm 切换镜像源"
+            link: "/engineer/node/nrm 切换镜像源"
           },
           {
             text: "SSH",
