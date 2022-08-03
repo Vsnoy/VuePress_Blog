@@ -25,6 +25,8 @@
 - [Angus Yang](https://www.imyangyong.com/blog/categories/)
 - [GuangJu](https://zguangju.github.io/)
 - [Marvin](https://canyuegongzi.github.io/)
+- [YaoFly](https://github.com/yaofly2012/note/issues)
+- [Jacky](https://github.com/Jacky-Summer/personal-blog)
 - [余光](https://webbj97.github.io/summary/blog/)
 - [冴羽](https://github.com/mqyqingfeng/Blog)
 - [木易杨](https://muyiy.cn/)
@@ -36,6 +38,7 @@
 - [CSS Tricks](https://css-tricks.com/)
 - [ECMAScript Daily](https://ecmascript-daily.github.io/)
 - [Fresh Frontend Links](https://frontender-ua.medium.com/)
+- [Daily Dev Tips](https://daily-dev-tips.com/)
 
 ## 源码
 

@@ -9,7 +9,12 @@ module.exports = {
     [
       "md-enhance",
       {
+        // 启用脚注
         footnote: true,
+        // 启用下角标
+        sub: true,
+        // 启用上角标
+        sup: true,
       },
     ],
     [
@@ -50,6 +55,15 @@ module.exports = {
             text: "JS",
             link: "/fe-basic/js/this 指向"
           }
+        ]
+      },
+      {
+        text: "前端框架",
+        items: [
+          {
+            text: "React",
+            link: "/fe-frame/react/同步异步 & 批处理"
+          },
         ]
       },
       {

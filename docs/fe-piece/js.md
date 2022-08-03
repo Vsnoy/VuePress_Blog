@@ -72,6 +72,28 @@ arr.map(function callback(currentValue[,index[, array]]) {
 
 [event.target 和 event.currentTarget](https://segmentfault.com/a/1190000003021586)
 
+## Object.is 和 === 区别
+
+主要在于对 `NaN` 和 `±0` 的处理不同。
+
+```
+NaN === NaN  // false
++0 === -0  // true
+
+Object.is(NaN, NaN)  // true
+Object.is(+0, -0)  // false
+```
+
+## Number.isNaN 和 isNaN 区别
+
+- `Number.isNaN` 只在参数值为 `NaN` 时，返回 `true`
+- `isNaN` 会尝试将参数转换为数值，任何不能被转换为数值的的值都会返回 `true`
+
+```
+Number.isNaN('aa') // false
+isNaN('aa') // true
+```
+
 ## async/await 与 Promise
 
 因为 `async/await` 本身就是 `promise` + `generator` 的语法糖。所以 `await` 后面的代码是 `microtask` 。
